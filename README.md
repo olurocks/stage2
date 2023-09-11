@@ -22,7 +22,7 @@ git clone https://github.com/olurocks/stage2.git
 2. Navigate to the project directory.
 
 ```bash
-cd 
+cd stage2
 ```
 
 3. Install the required dependencies.
