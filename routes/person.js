@@ -6,6 +6,11 @@ const router = express.Router();
 router.post('/', async(req,res) => {
    try {
     const {name, value} = req.body;
+
+    if (typeof name !== 'string' || typeof value !== 'string') {
+        return res.status(400).json({ error: 'Name and value must be strings' });
+      }
+
     console.log(name,value)
         const person = await Person.create({name, value})
     res.status(201).json(person);
@@ -39,7 +44,12 @@ router.put('/:id', async (req, res) => {
     try {
       const id = req.params.id;
       const { name, value } = req.body;
-  
+
+      if (typeof name !== 'string' || typeof value !== 'string') {
+        return res.status(400).json({ error: 'Name and value must be strings' });
+      }
+
+      
       // Use Sequelize to update the age by ID
       const [updatedRowCount] = await Person.update({ name, value }, {
         where: { id },

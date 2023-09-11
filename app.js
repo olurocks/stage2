@@ -7,7 +7,7 @@ app.use(express.json());
 
 
 const personRoutes = require('./routes/person');
-app.use('/api/person', personRoutes)
+app.use('/api/', personRoutes)
 
 // Sync the database to create tables if they don't exist
 sequelize.sync().then(() => {
