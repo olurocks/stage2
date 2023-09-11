@@ -16,13 +16,13 @@ Before you begin, make sure you have the following prerequisites:
 1. Clone the repository to your local machine.
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/olurocks/stage2.git
 ```
 
 2. Navigate to the project directory.
 
 ```bash
-cd <project_directory>
+cd 
 ```
 
 3. Install the required dependencies.
@@ -42,7 +42,7 @@ npx sequelize db:migrate
 6. Start the server.
 
 ```bash
-npm start
+npm run dev
 ```
 
 ## Endpoints
