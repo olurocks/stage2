@@ -11,7 +11,6 @@ router.post('/', async(req,res) => {
         return res.status(400).json({ error: 'Name and value must be strings' });
       }
 
-    console.log(name,value)
         const person = await Person.create({name, value})
     res.status(201).json(person);
     } catch (error) {
@@ -25,7 +24,6 @@ router.post('/', async(req,res) => {
 router.get("/:id", async(req, res) => {
     try {
         const id = req.params.id
-        console.log(id)
         const person = await Person.findByPk(id)
         if (!person) {
             res.status(404).send({ error: "Person with given ID not found" });
@@ -58,7 +56,7 @@ router.put('/:id', async (req, res) => {
       if (updatedRowCount === 0) {
         res.status(404).json({ error: 'Person not found' });
       } else {
-        res.status(200).json({ message: 'Person updated successfully' });
+        res.status(200).json({ message: 'Person updated successfully', updatedDetails: updatedRowCount });
       }
     } catch (error) {
       console.error(error);
