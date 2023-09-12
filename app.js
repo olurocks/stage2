@@ -16,6 +16,6 @@ sequelize.sync().then(() => {
     console.error('Error synchronizing database:', error);
   });
 
-app.listen(port, () => {
+module.exports = app.listen(port, () => {
     console.log(`server running on, http://localhost:${port}`)
 })
