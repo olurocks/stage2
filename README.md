@@ -133,3 +133,9 @@ npm run dev
 - If the provided ID does not exist, you will receive a `404 Not Found` response.
 - If the request body does not contain valid name and value fields, you will receive a `400 Bad Request` response.
 - If there is an internal server error, you will receive a `500 Internal Server Error` response.
+
+  ## Test
+- To run tests run the command in your root directory
+```bash 
+npm run test
+```
