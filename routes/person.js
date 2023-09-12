@@ -56,7 +56,8 @@ router.put('/:id', async (req, res) => {
       if (updatedRowCount === 0) {
         res.status(404).json({ error: 'Person not found' });
       } else {
-        res.status(200).json({ message: 'Person updated successfully', updatedDetails: updatedRowCount });
+        const updatedPerson = await Person.findByPk(id)
+        res.status(200).json({ message: 'Person updated successfully', updatedDetails: updatedPerson });
       }
     } catch (error) {
       console.error(error);
